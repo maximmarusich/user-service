@@ -7,3 +7,7 @@ cache:
     - $HOME/.m2
 
 script: ./mvnw clean install -Dpact.verifier.publishResults=true
+
+branches:
+  only:
+    - master
