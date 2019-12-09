@@ -6,4 +6,11 @@ cache:
   directories:
     - $HOME/.m2
 
-script: ./mvnw clean install -Dpact.verifier.publishResults=true
+jobs:
+  include:
+    - stage : build
+      script: ./mvnw clean install -Dpact.verifier.publishResults=true
+
+branches:
+  only:
+    - master
