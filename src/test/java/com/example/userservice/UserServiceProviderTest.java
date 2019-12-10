@@ -23,7 +23,8 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = UserServiceApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@PactBroker(host = "52.205.249.52", port = "9292")
+//@PactBroker(host = "52.205.249.52", port = "9292")
+@PactBroker
 @Provider("user-service")
 public class UserServiceProviderTest {
 
@@ -31,9 +32,6 @@ public class UserServiceProviderTest {
     int randomServerPort;
     @MockBean
     private UserController userController;
-
-    @Captor
-    private ArgumentCaptor<Long> userIdCaptor;
 
     @BeforeEach
     void setupTestTarget(PactVerificationContext context) {
