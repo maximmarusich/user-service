@@ -72,6 +72,19 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <systemPropertyVariables>
+                        <pact.provider.version>0.0.${TRAVIS_BUILD_NUMBER}</pact.provider.version>
+                        <pact.verifier.publishResults>true</pact.verifier.publishResults>
+                        <pactbroker.host>52.205.249.52</pactbroker.host>
+                        <pactbroker.port>9292</pactbroker.port>
+                    </systemPropertyVariables>
+                </configuration>
+
+            </plugin>
         </plugins>
     </build>
 

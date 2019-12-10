@@ -9,7 +9,7 @@ cache:
 jobs:
   include:
     - stage : build
-      script: ./mvnw clean install -Dpact.verifier.publishResults=true
+      script: ./mvnw clean install
 
 branches:
   only:
